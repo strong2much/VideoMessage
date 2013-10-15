@@ -1,0 +1,39 @@
+<Application>
+	<StreamManager>
+		<VirtualDirectory>
+			<!-- Specifies application specific virtual directory mapping for recorded streams.	-->
+			<!-- By default it will record streams in the first folder in the list below.		-->
+			<Streams>/;${VM_COMMON_DIR}</Streams>
+			<Streams>/;${VM_DIR}</Streams>
+      
+		</VirtualDirectory>
+		<Recording>
+			<!-- The maximum duration of a recording, in seconds. The default value is -1,	-->
+			<!-- which enforces no maximum duration. 										-->
+			<MaxDuration>60</MaxDuration>
+			<MaxDurationCap>60</MaxDurationCap>
+		</Recording>
+	</StreamManager>
+	
+	<!-- Settings specific to runtime script engine memory -->
+	<ScriptEngine>
+		<!-- This specifies the max size (Kb.) the runtime can grow to before -->
+		<!-- garbage collection is performed.                                 -->
+		<RuntimeSize>20480</RuntimeSize>
+	</ScriptEngine>
+	
+	<Client>
+		<Bandwidth>
+			<!-- Specified in bytes/sec -->
+			<ServerToClient>327680</ServerToClient>
+		</Bandwidth>
+		
+		<MsgQueue>
+			<Recorded>
+				<!-- Default buffer length in millisecond for live audio and video, value cannot be set below this by Flash player. -->
+				<MinBufferTime>2000</MinBufferTime>
+			</Recorded>
+		</MsgQueue>
+	</Client>
+
+</Application>
